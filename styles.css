@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+
+:root {
+  --paleBlue: hsl(225, 100%, 94%);
+  --brightBlue: hsl(245, 75%, 52%);
+  --brightBlueHover: hsl(245, 75%, 65%);
+  --veryPaleBlue: hsl(225, 100%, 98%);
+  --desaturatedBlue: hsl(224, 23%, 55%);
+  --darkBlue: hsl(223, 47%, 23%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--paleBlue);
+  background-image: url("./images/pattern-background-desktop.svg");
+  background-repeat: no-repeat;
+  background-position: top;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.order-summary-container {
+  width: 85%;
+  max-width: 400px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.order-summary-container > img {
+  object-fit: contain;
+  width: 100%;
+}
+
+.order-summary-body {
+  width: 80%;
+  margin: 0 auto;
+}
+
+h1.order-summary-title {
+  font-size: 1.75rem;
+  color: var(--darkBlue);
+  font-weight: 900;
+  margin-top: 2rem;
+}
+
+p.order-summary-content {
+  font-size: 1rem;
+  color: var(--desaturatedBlue);
+  font-weight: 500;
+  margin: 1rem 0rem;
+}
+
+.order-summary-plan {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 1em;
+  margin-bottom: 2rem;
+  background-color: var(--veryPaleBlue);
+  border-radius: 10px;
+}
+
+.order-summary-plan-details {
+  margin-left: 1em;
+}
+
+h4.order-summary-plan-details-title {
+  font-size: 1rem;
+  font-weight: 900;
+  color: var(--darkBlue);
+}
+
+span.order-summary-plan-details-pricing {
+  font-size: 1em;
+  color: var(--desaturatedBlue);
+}
+
+button {
+  cursor: pointer;
+}
+
+button.order-summary-plan-change-btn {
+  border: none;
+  background-color: inherit;
+  margin-left: auto;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--brightBlue);
+  text-decoration: underline;
+  transition: 150ms ease-in-out;
+}
+
+button.order-summary-plan-change-btn:hover {
+  text-decoration: none;
+  color: var(--brightBlueHover);
+}
+
+button.order-summary-proceed-to-payment {
+  display: block;
+  border: none;
+  color: #fff;
+  width: 100%;
+  background-color: var(--brightBlue);
+  margin-bottom: 2rem;
+  padding: 1em 0;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 900;
+  box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.15);
+  transition: 150ms ease-in-out;
+}
+
+button.order-summary-proceed-to-payment:hover {
+  background-color: var(--brightBlueHover);
+}
+
+button.order-summary-cancel-order {
+  border: none;
+  background-color: inherit;
+  font-size: 0.9rem;
+  font-weight: 900;
+  color: var(--desaturatedBlue);
+  margin-bottom: 3rem;
+  transition: 150ms ease-in-out;
+}
+
+button.order-summary-cancel-order:hover {
+  color: var(--darkBlue);
+}
+
+@media screen and (max-width: 375px) {
+  body {
+    background-image: url("./images/pattern-background-mobile.svg");
+  }
+  .order-summary-body {
+    width: 85%;
+  }
+  .order-summary-plan {
+    flex-wrap: wrap;
+  }
+}
