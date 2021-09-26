@@ -7,6 +7,7 @@
   --veryPaleBlue: hsl(225, 100%, 98%);
   --desaturatedBlue: hsl(224, 23%, 55%);
   --darkBlue: hsl(223, 47%, 23%);
+  --hyperLink: #0b0080;
 }
 
 *,
@@ -29,6 +30,15 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 0.5em 0;
+  text-align: center;
+  background-color: var(--paleBlue);
 }
 
 .order-summary-container {
@@ -141,6 +151,28 @@ button.order-summary-cancel-order {
 
 button.order-summary-cancel-order:hover {
   color: var(--darkBlue);
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--hyperLink);
+  position: relative;
+}
+footer a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 0.15em;
+  background-color: var(--hyperLink);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: 250ms transform ease-in;
+}
+
+footer a:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 @media screen and (max-width: 375px) {
